@@ -15,10 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         mysqli_stmt_bind_param($stmt, "sss", $nome, $email, $senha);
 
         if (mysqli_stmt_execute($stmt)) {
-            header("Location: ../../index.php?registro=sucesso");
+            // Caminho corrigido para a raiz do projeto
+            header("Location: ../index.php?success=true");
             exit();
         } else {
-            header("Location: ../views/register.php?registro=erro");
+            // Mostra o erro se a execução falhar (ajuda a debugar)
+            header("Location: ../views/register.php?success=false&error=" . mysqli_error($conexao));
             exit();
         }
 

@@ -1,4 +1,5 @@
 <?php
+// Inclui a conexão com o banco de dados
 require_once('../configs/config.php');
 ?>
 
@@ -8,37 +9,32 @@ require_once('../configs/config.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <title>Home Page</title>
+    <!-- Arquivo de estilos mestre -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <title>Início - Sistema de Estoque</title>
 </head>
 
 <body>
+    <!-- Inclui o cabeçalho (menu superior) -->
     <?php include('../components/header.php'); ?>
 
-    <!-- Alerta de Sucesso e Estoque Baixo -->
-    <?php if (isset($_GET['success']) && $_GET['success'] == 'true'): ?>
-        <div style="margin: 20px; padding: 15px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 5px; color: #155724;">
-            <strong>✓ Operação realizada com sucesso!</strong>
-        </div>
-    <?php endif; ?>
+    <!-- O sistema de alertas (Toasts) é disparado pelo script.js via URL -->
+    <!-- Ele detecta os parâmetros ?success=true ou ?alerta=estoque_baixo -->
 
-    <!-- Alerta de Estoque Baixo -->
-    <?php if (isset($_GET['alerta']) && $_GET['alerta'] === 'estoque_baixo'): ?>
-        <div style="margin: 20px; padding: 15px; background-color: #fff3cd; border: 1px solid #ffc107; border-radius: 5px; color: #856404;">
-            <strong>⚠️ Aviso: Estoque Baixo!</strong>
-            <p>O estoque do produto está baixo. Quantidade atual: <strong><?php echo intval($_GET['quantidade']); ?></strong> unidades.</p>
-        </div>
-    <?php endif; ?>
+    <!-- Container central com os botões de atalho -->
+    <div class="div-buttons-home" style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 50px;">
+        
+        <!-- Botão para ir para a tela de cadastro de produtos -->
+        <a href="register_product.php" class="btn">Cadastrar Produto</a>
 
-    <div class="div-buttons-home">
-        <button>
-            <a href="register_product.php">Cadastrar Produto</a>
-        </button>
+        <!-- Botão para registrar entradas ou saídas de estoque -->
+        <a href="flow_register.php" class="btn">Entrada / Saída</a>
 
-        <button>
-            <a href="flow_register.php">Fluxo de Entrada e Saída</a>
-        </button>
+        <!-- Botão para ver a lista de todos os produtos -->
+        <a href="table_products.php" class="btn">Lista de Produtos</a>
+
+        <!-- Botão para ver o histórico de movimentações -->
+        <a href="movement_history.php" class="btn">Histórico Completo</a>
 
     </div>
 </body>

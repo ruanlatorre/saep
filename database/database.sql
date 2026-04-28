@@ -54,7 +54,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `saep_db`.`usuarios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `saep_db`.`usuarios` (
-  `idusuarios` INT(11) NOT NULL,
+  `idusuarios` INT(11) NOT NULL AUTO_INCREMENT,
   `nome_usuarios` VARCHAR(45) NULL DEFAULT NULL,
   `usuario` VARCHAR(45) NULL DEFAULT NULL,
   `senha` VARCHAR(255) NULL DEFAULT NULL,

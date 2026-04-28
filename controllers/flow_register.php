@@ -62,11 +62,7 @@ mysqli_stmt_close($stmt_update);
 // 8. Commit da transação
 mysqli_commit($conexao);
 
-// 9. Verifica se estoque ficou baixo (menos de 5 unidades)
-if ($nova_quantidade < 5 && $nova_quantidade >= 0) {
-    header("Location: ../views/home.php?success=true&alerta=estoque_baixo&quantidade=" . $nova_quantidade);
-} else {
-    header("Location: ../views/home.php?success=true");
-}
+// 9. Redireciona para o resumo do produto após o fluxo
+header("Location: ../views/product_summary.php?id=" . $fk_produto);
 exit();
 ?>

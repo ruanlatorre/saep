@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/register_product.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <title>Cadastrar Produto</title>
 </head>
 
@@ -58,9 +56,9 @@
 
         </form>
 
-        <button id="btn_list">
-            <a href="../views/table_products.php">Ver produtos</a>
-        </button>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="../views/table_products.php" class="btn">Ver Lista de Produtos</a>
+        </div>
     </div>
 
 </body>

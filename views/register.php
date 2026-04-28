@@ -8,23 +8,34 @@ require_once('../configs/config.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS unificado -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- JS para alertas e animações -->
+    <script src="../assets/js/script.js" defer></script>
     <title>Cadastrar Usuário</title>
 </head>
 
 <body>
+    <!-- Formulário de Cadastro -->
     <form action="../controllers/register.php" method="post">
-        <h1>Cadastrar Usuário</h1>
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
-        <br>
+        <h2>Criar Nova Conta</h2>
+        
+        <label for="nome">Nome Completo:</label>
+        <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+        
+        <label for="email">E-mail (Usuário):</label>
+        <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+        
         <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="senha">
-        <br>
-        <button type="submit">Cadastrar</button>
+        <input type="password" name="senha" id="senha" placeholder="Crie uma senha" required>
+        
+        <button type="submit">Finalizar Cadastro</button>
     </form>
-    <a href="../../index.php">Já tenho uma conta</a>
+    
+    <!-- Link para voltar ao login -->
+    <div style="text-align: center;">
+        <a href="../index.php">Já tenho uma conta? Entrar agora</a>
+    </div>
 </body>
 
 </html>
