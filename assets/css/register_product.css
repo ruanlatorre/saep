@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px auto;
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Label acima do input */
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 3px;
+    display: block;
+}
+
+/* Input com borda embaixo apenas */
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Borda verde ao clicar no input */
+input:focus {
+    border-bottom: 2px solid #4CAF50;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#btn_list {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    cursor: pointer;
+    margin: 10px auto 0 auto;
+    /* auto nas laterais centraliza o elemento */
+    text-align: center;
+    width: 30%;
+    text-decoration: none;
+    color: black;
+}
